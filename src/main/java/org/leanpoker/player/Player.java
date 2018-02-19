@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "0.1";
+    static final String VERSION = "TryCatch19";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -28,9 +28,9 @@ public class Player {
             String color2 = secondCard.get("suit").toString();
             JSONArray community = json.getJSONArray("community_cards");
             if (rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J") && rank1.equals(rank2)) return 1000;
-            if (!rank1.matches("[JQKA]") && rank1.equals(rank2)) return 50;
-            if (rank1.matches("[10JQKA]") && rank2.matches("[10JQKA]")) return 10;
-            if (rank1.matches("[8910JQKA]") || rank2.matches("[8910JQKA]") && color1.equals(color2)) return 25;
+            if (!rank1.matches("JQKA") && rank1.equals(rank2)) return 50;
+            if (rank1.matches("10JQKA") && rank2.matches("10JQKA")) return 10;
+            if (rank1.matches("8910JQKA") || rank2.matches("8910JQKA") && color1.equals(color2)) return 25;
             logger.error("{}, {}", rank1, rank2);
             logger.error("{}", community.toString());
         } catch (Exception e) {
