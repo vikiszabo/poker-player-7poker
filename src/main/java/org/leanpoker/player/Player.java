@@ -28,7 +28,7 @@ public class Player {
             String color2 = secondCard.get("suit").toString();
             JSONArray community = json.getJSONArray("community_cards");
             if ((rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J")) && rank1.equals(rank2)) return 1000;
-            if ((rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J")) && (rank2.equals("A") || rank2.equals("K") || rank2.equals("Q") || rank2.equals("J")) && color1.equals(color2)) return 75;
+//            if ((rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J")) && (rank2.equals("A") || rank2.equals("K")) || rank2.equals("Q") || rank2.equals("J")) && color1.equals(color2)) return 75;
             if (rank1.equals(rank2)) return 75;
         } catch (Exception e) {
             e.printStackTrace();
