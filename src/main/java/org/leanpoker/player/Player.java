@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "TryCatch4";
+    static final String VERSION = "TryCatch5";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -23,11 +23,15 @@ public class Player {
             JSONArray players = json.getJSONArray("players");
             JSONObject cards = players.getJSONObject(3);
             JSONArray cards2 = cards.getJSONArray("hole_cards");
-            logger.error("{}", cards2.toString());
+            JSONObject firstCard = cards2.getJSONObject(0);
+            JSONObject secondCard = cards2.getJSONObject(1);
+            String rank1 = firstCard.get("rank").toString();
+            String rank2 = secondCard.get("rank").toString();
+            logger.error("{}, {}", rank1, rank2);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 4;
+        return 0;
     }
 
     public static void showdown(JsonElement game) {
