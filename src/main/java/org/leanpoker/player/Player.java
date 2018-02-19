@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "TryCatch8";
+    static final String VERSION = "TryCatch9";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -24,7 +24,7 @@ public class Player {
             JSONObject secondCard = cards2.getJSONObject(1);
             String rank1 = firstCard.get("rank").toString();
             String rank2 = secondCard.get("rank").toString();
-            if (rank1.equals("A") || rank2.equals("A") || rank1.equals(rank2)) return 500;
+            if (rank1.equals("A") || rank2.equals("A") || rank1.equals(rank2)) return 100;
             logger.error("{}, {}", rank1, rank2);
             logger.error("{}", json.toString());
         } catch (Exception e) {
