@@ -10,13 +10,15 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "TryCatch11";
+    static final String VERSION = "TryCatch12";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
         try {
             JsonObject gson = request.getAsJsonObject();
             JSONObject json = new JSONObject(gson.toString());
+            String gameState = json.get("bet_index").toString();
+            if (gameState.equals("0")) gson = request.getAsJsonObject();
             JSONArray players = json.getJSONArray("players");
             JSONObject cards = players.getJSONObject(3);
             JSONArray cards2 = cards.getJSONArray("hole_cards");
