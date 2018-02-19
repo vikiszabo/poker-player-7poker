@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "0.9";
+    static final String VERSION = "0.10";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
