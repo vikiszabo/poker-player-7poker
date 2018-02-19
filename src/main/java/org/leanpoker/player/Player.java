@@ -31,8 +31,6 @@ public class Player {
             if (!rank1.matches("JQKA") && rank1.equals(rank2)) return 50;
             if (rank1.matches("10JQKA") && rank2.matches("10JQKA")) return 10;
             if (rank1.matches("8910JQKA") || rank2.matches("8910JQKA") && color1.equals(color2)) return 25;
-            logger.error("{}, {}", rank1, rank2);
-            logger.error("{}", community.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
