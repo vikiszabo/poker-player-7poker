@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "0.1";
+    static final String VERSION = "0.2";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -33,6 +33,7 @@ public class Player {
             if (rank1.matches("[8910JQKA]") || rank2.matches("[8910JQKA]") && color1.equals(color2)) return 25;
         } catch (Exception e) {
             e.printStackTrace();
+            return 1;
         }
         return 0;
     }
