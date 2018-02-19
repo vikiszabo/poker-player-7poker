@@ -11,7 +11,7 @@ public class Player {
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
-        logger.info("{}", request.toString());
+        logger.info("halooooooo");
         return 1000;
     }
 
