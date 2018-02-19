@@ -38,6 +38,7 @@ buildscript {
 }
 
 dependencies {
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.10.0'
     compile 'org.json:json:20171018'
     compile 'com.google.code.gson:gson:2.2.4'
     def tomcatVersion = '7.0.11'

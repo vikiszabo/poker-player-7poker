@@ -1,14 +1,17 @@
 package org.leanpoker.player;
 
 import com.google.gson.JsonElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.Map;
 
 public class Player {
 
     static final String VERSION = "Default Java folding player";
+    private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
+        logger.info("{}", request.toString());
         return 1000;
     }
 
