@@ -1,6 +1,5 @@
 package org.leanpoker.player;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.slf4j.Logger;
@@ -14,7 +13,7 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         JsonObject ob = request.getAsJsonObject();
-        JsonArray arr = ob.getAsJsonArray("hole_cards");
+        String arr = ob.get("hole_cards").toString();
 //        for (JsonElement jsonelement : arr) {
 //            String rank = jsonelement.getAsString();
 //            if (rank.indexOf("A") > 0) {
@@ -22,7 +21,7 @@ public class Player {
 //            }
 //        }
         logger.error("{}", request.toString());
-        logger.error("{}", arr.toString());
+        logger.error("{}", arr);
         return 1000;
     }
 
