@@ -26,9 +26,8 @@ public class Player {
             logger.error("{}", cards2.toString());
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            return 4;
         }
+        return 4;
     }
 
     public static void showdown(JsonElement game) {
