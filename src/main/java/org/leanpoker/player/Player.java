@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "0.7";
+    static final String VERSION = "0.8";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -27,7 +27,7 @@ public class Player {
             String color1 = firstCard.get("suit").toString();
             String color2 = secondCard.get("suit").toString();
             JSONArray community = json.getJSONArray("community_cards");
-            if (rank1.matches("[10JQKA]") && rank1.equals(rank2)) return 1000;
+            if (rank1.matches("[10JQKA]") && rank1.equals(rank2)) return 100;
             if (rank1.matches("[JQKA]") && rank2.matches("[JQKA]") && color1.equals(color2)) return 75;
             if (rank1.equals(rank2)) return 75;
         } catch (Exception e) {
