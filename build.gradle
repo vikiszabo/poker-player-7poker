@@ -38,6 +38,7 @@ buildscript {
 }
 
 dependencies {
+    compile 'org.json:json:20171018'
     compile 'com.google.code.gson:gson:2.2.4'
     def tomcatVersion = '7.0.11'
 
