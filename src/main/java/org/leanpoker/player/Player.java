@@ -21,7 +21,7 @@ public class Player {
 //        }
         logger.error("{}", request.toString());
         logger.error("22222222 {}", ob.toString());
-        return 1000;
+        return 500;
     }
 
     public static void showdown(JsonElement game) {
