@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "0.4";
+    static final String VERSION = "0.5";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -29,6 +29,7 @@ public class Player {
             JSONArray community = json.getJSONArray("community_cards");
             if (rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J") && rank1.equals(rank2)) return 1000;
             if (rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J") && rank2.equals("A") || rank2.equals("K") || rank2.equals("Q") || rank2.equals("J") && color1.equals(color2)) return 75;
+            if (rank1.equals(rank2)) return 75;
         } catch (Exception e) {
             e.printStackTrace();
         }
