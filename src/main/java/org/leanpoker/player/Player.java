@@ -13,7 +13,6 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         JsonObject ob = request.getAsJsonObject();
-        String arr = ob.get("hole_cards").toString();
 //        for (JsonElement jsonelement : arr) {
 //            String rank = jsonelement.getAsString();
 //            if (rank.indexOf("A") > 0) {
