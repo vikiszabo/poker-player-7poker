@@ -12,6 +12,7 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         System.err.printf("%s", request.toString());
+        logger.error("{}", request.toString());
         return 1000;
     }
 
