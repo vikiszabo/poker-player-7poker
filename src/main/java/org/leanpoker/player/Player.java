@@ -22,7 +22,7 @@ public class Player {
 //            }
 //        }
         logger.error("{}", request.toString());
-        logger.error("{}", request.toString());
+        logger.error("{}", arr.toString());
         return 1000;
     }
 
