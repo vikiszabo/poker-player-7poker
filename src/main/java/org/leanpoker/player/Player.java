@@ -28,11 +28,10 @@ public class Player {
             String color2 = secondCard.get("suit").toString();
             JSONArray community = json.getJSONArray("community_cards");
             if (rank1.matches("[10JQKA]") && rank1.equals(rank2)) return 1000;
-            if (rank1.equals(rank2)) return 200;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 4;
+        return 2;
     }
 
     public static void showdown(JsonElement game) {
