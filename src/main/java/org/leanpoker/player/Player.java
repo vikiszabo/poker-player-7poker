@@ -20,8 +20,7 @@ public class Player {
 //            }
 //        }
         logger.error("{}", request.toString());
-        logger.error("22222222 {}", ob.toString());
-        return 500;
+        return 1000;
 
     }
 
