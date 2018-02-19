@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "TryCatch13";
+    static final String VERSION = "TryCatch14";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
@@ -19,6 +19,14 @@ public class Player {
             JSONObject json = new JSONObject(gson.toString());
             String gameState = json.get("bet_index").toString();
             if (gameState.equals("0")) gson = request.getAsJsonObject();
+            json = new JSONObject(gson.toString());
+            gameState = json.get("bet_index").toString();
+            if (gameState.equals("1")) gson = request.getAsJsonObject();
+            json = new JSONObject(gson.toString());
+            gameState = json.get("bet_index").toString();
+            if (gameState.equals("2")) gson = request.getAsJsonObject();
+            json = new JSONObject(gson.toString());
+            gameState = json.get("bet_index").toString();
             JSONArray players = json.getJSONArray("players");
             JSONObject cards = players.getJSONObject(3);
             JSONArray cards2 = cards.getJSONArray("hole_cards");
@@ -26,9 +34,10 @@ public class Player {
             JSONObject secondCard = cards2.getJSONObject(1);
             String rank1 = firstCard.get("rank").toString();
             String rank2 = secondCard.get("rank").toString();
+            JSONArray community = json.getJSONArray("community_cards");
             if (rank1.equals("A") || rank1.equals("K") || rank1.equals("Q") || rank1.equals("J") || rank1.equals(rank2)) return 1000;
             logger.error("{}, {}", rank1, rank2);
-            logger.error("{}", json.toString());
+            logger.error("{}", community.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
