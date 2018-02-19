@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class Player {
 
-    static final String VERSION = "Default Java folding player";
+    static final String VERSION = "TryCatch";
     private static final Logger logger = LoggerFactory.getLogger(Player.class);
 
     public static int betRequest(JsonElement request) {
